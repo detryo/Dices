@@ -40,6 +40,9 @@ class ViewController: UIViewController {
         
         randomDiceIndexLeft = Int(arc4random_uniform(nFaces))
         randomDiceIndexRight = Int(arc4random_uniform(nFaces))
+        
+        imageViewDiceLeft.image = UIImage(named: diceImages[randomDiceIndexLeft])
+        imageViewDiceRight.image = UIImage(named: diceImages[randomDiceIndexRight])
     }
 }
 
