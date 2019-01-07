@@ -71,5 +71,18 @@ class ViewController: UIViewController {
             self.imageViewDiceRight.image = UIImage(named: nameImageDiceRight)
         }
     }
+    
+    override func becomeFirstResponder() -> Bool {
+        
+        return true
+    }
+    
+    override func motionEnded(_ motion: UIEvent.EventSubtype, with event: UIEvent?) {
+        
+        if motion == .motionShake{
+            
+            generateRandomDicde()
+        }
+    }
 }
 
