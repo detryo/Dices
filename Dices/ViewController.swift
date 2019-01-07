@@ -37,12 +37,39 @@ class ViewController: UIViewController {
     
     func generateRandomDicde(){
         
-        
         randomDiceIndexLeft = Int(arc4random_uniform(nFaces))
         randomDiceIndexRight = Int(arc4random_uniform(nFaces))
         
-        imageViewDiceLeft.image = UIImage(named: diceImages[randomDiceIndexLeft])
-        imageViewDiceRight.image = UIImage(named: diceImages[randomDiceIndexRight])
+        let nameImageDiceLeft = diceImages[randomDiceIndexLeft]
+        let nameImageDiceRight = diceImages[randomDiceIndexRight]
+        
+        UIView.animate(withDuration: 0.3,
+                       delay: 0,
+                       options: UIView.AnimationOptions.curveEaseInOut,
+                       animations: {
+                        
+                        self.imageViewDiceLeft.transform = CGAffineTransform(scaleX: 0.6, y: 0.6)
+                            .concatenating(CGAffineTransform(rotationAngle: CGFloat.pi/2))
+                            .concatenating(CGAffineTransform(translationX: 0, y: 60))
+                        
+                        self.imageViewDiceRight.transform = CGAffineTransform(scaleX: 0.6, y: 0.6)
+                            .concatenating(CGAffineTransform(rotationAngle: CGFloat.pi/2))
+                            .concatenating(CGAffineTransform(translationX: -60, y: 60))
+                        
+                        self.imageViewDiceLeft.alpha = 0.0
+                        self.imageViewDiceRight.alpha = 0.0
+            
+        }) { (completed) in
+            
+            self.imageViewDiceLeft.transform = CGAffineTransform.identity
+            self.imageViewDiceRight.transform = CGAffineTransform.identity
+            
+            self.imageViewDiceLeft.alpha = 1.0
+            self.imageViewDiceRight.alpha = 1.0
+            
+            self.imageViewDiceLeft.image = UIImage(named: nameImageDiceLeft)
+            self.imageViewDiceRight.image = UIImage(named: nameImageDiceRight)
+        }
     }
 }
 
