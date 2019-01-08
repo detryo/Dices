@@ -30,16 +30,16 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        generateRandomDicde()
+        generateRandomDice()
         
     }
 
     @IBAction func rollPressed(_ sender: UIButton) {
-        generateRandomDicde()
+        generateRandomDice()
         
     }
     
-    func generateRandomDicde(){
+    func generateRandomDice(){
         
         randomDiceIndexLeft = Int(arc4random_uniform(nFaces))
         randomDiceIndexRight = Int(arc4random_uniform(nFaces))
@@ -92,7 +92,7 @@ class ViewController: UIViewController {
         
         if motion == .motionShake{
             
-            generateRandomDicde()
+            generateRandomDice()
         }
     }
 }
