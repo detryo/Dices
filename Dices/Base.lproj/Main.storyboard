@@ -49,17 +49,26 @@
                                     <constraint firstAttribute="width" secondItem="oLN-2S-EhE" secondAttribute="height" multiplier="30:19" id="jSB-te-lPV"/>
                                 </constraints>
                             </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Result" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FZW-wA-HL0">
+                                <rect key="frame" x="88" y="590" width="200" height="38.333333333333371"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="32"/>
+                                <color key="textColor" red="0.93725490570000003" green="0.93725490570000003" blue="0.95686274770000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
+                            <constraint firstItem="FZW-wA-HL0" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="88" id="1lw-3Z-zIn"/>
                             <constraint firstItem="dMa-Fl-jzG" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="2md-yO-GHu"/>
                             <constraint firstItem="dMa-Fl-jzG" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="9tx-Iu-naj"/>
                             <constraint firstItem="oLN-2S-EhE" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="80" id="Bmb-Nz-kli"/>
                             <constraint firstItem="oLN-2S-EhE" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="KD7-Am-mHe"/>
                             <constraint firstItem="5tG-9X-RLh" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Ngs-se-xFQ"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="FZW-wA-HL0" secondAttribute="trailing" constant="87" id="Ntj-tC-yVh"/>
                             <constraint firstItem="5tG-9X-RLh" firstAttribute="top" secondItem="lbi-7T-tjA" secondAttribute="bottom" constant="60" id="Qwd-eU-NQ9"/>
                             <constraint firstItem="lbi-7T-tjA" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="XMy-nc-Via"/>
                             <constraint firstAttribute="bottom" secondItem="dMa-Fl-jzG" secondAttribute="bottom" id="Xuu-HS-4uT"/>
+                            <constraint firstItem="FZW-wA-HL0" firstAttribute="top" secondItem="5tG-9X-RLh" secondAttribute="bottom" constant="8" id="Yra-eQ-uTK"/>
                             <constraint firstItem="dMa-Fl-jzG" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="bbj-Lx-jQ2"/>
                             <constraint firstItem="lbi-7T-tjA" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="eXk-x5-j75"/>
                         </constraints>
@@ -68,6 +77,7 @@
                     <connections>
                         <outlet property="imageViewDiceLeft" destination="UVM-i6-ZjH" id="cnv-Ga-eVL"/>
                         <outlet property="imageViewDiceRight" destination="Rke-hE-qnL" id="nV2-Ue-th5"/>
+                        <outlet property="result" destination="FZW-wA-HL0" id="owl-vI-SZY"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>

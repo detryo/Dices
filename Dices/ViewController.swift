@@ -12,14 +12,16 @@ class ViewController: UIViewController {
     
     @IBOutlet weak var imageViewDiceLeft: UIImageView!
     @IBOutlet weak var imageViewDiceRight: UIImageView!
+    @IBOutlet weak var result: UILabel!
     
     var randomDiceIndexLeft : Int = 0
     var randomDiceIndexRight : Int = 0
     let diceImages : [String]
     let nFaces : UInt32
     
+    
+    
     required init?(coder aDecoder: NSCoder) {
-        
         diceImages = ["dice1","dice2","dice3","dice4","dice5","dice6"]
         nFaces = UInt32(diceImages.count)
         super.init(coder: aDecoder)
@@ -29,10 +31,12 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         
         generateRandomDicde()
+        
     }
 
     @IBAction func rollPressed(_ sender: UIButton) {
         generateRandomDicde()
+        
     }
     
     func generateRandomDicde(){
@@ -42,6 +46,13 @@ class ViewController: UIViewController {
         
         let nameImageDiceLeft = diceImages[randomDiceIndexLeft]
         let nameImageDiceRight = diceImages[randomDiceIndexRight]
+        
+        let diceLeft: Int? = Int(randomDiceIndexLeft)
+        let diceRight: Int? = Int(randomDiceIndexRight)
+        let convert = diceLeft! + diceRight!
+        let convertDice = String(convert+2)
+        
+        result.text = convertDice
         
         UIView.animate(withDuration: 0.3,
                        delay: 0,
